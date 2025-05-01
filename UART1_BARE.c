@@ -1,6 +1,6 @@
 #include "stm32f0xx.h"
 #include <stdint.h>
-
+#include <stdio.h>
 #define GPIOAEN (1U << 17)
 #define UART2EN (1U << 17)
 #define SYS_FREQ 16000000
@@ -17,12 +17,15 @@ void uart2_write(int ch);
 static void uart_set_baudrate(USART_TypeDef *USARTx , uint32_t PeriphClk , uint32_t BaudRate);
 static uint16_t compute_uart_bd(uint32_t PeriphClk , uint32_t BaudRate);
 
-
+int __io_putchar(int ch){
+	uart2_write(ch);
+	return ch;
+}
 int main(void){
 	uart2tx_init();
 
 	while(1){
-		uart2_write('R');
+		printf("hello from raunaq");
 
 	}
 }
