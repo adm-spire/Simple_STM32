@@ -11,11 +11,6 @@
 #define LED_PIN PIN5
 
 
-
-
-
-
-
 int main(void){
 	RCC->AHBENR |= GPIOAEN;
 	GPIOA->MODER |= (1U << 10);
