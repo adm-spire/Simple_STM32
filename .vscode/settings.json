@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "LED_HAL.C": "cpp"
+        "LED_HAL.C": "cpp",
+        "MAIN.C": "cpp"
     }
 }
